@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node", "vite/client"],
+    "paths": {
+      "foldkit-serverfn": ["../../packages/serverfn/src/index.ts"],
+      "foldkit-serverfn/*": ["../../packages/serverfn/src/*.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "scripts/**/*.ts", "vite.config.ts"]
+}
