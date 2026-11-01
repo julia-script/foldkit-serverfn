@@ -1,0 +1,15 @@
+{
+  "name": "foldkit-serverfn-monorepo",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "pnpm --filter foldkit-serverfn build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "dev": "pnpm build && pnpm --filter guestbook-example dev"
+  }
+}
