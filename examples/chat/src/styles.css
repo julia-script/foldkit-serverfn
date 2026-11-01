@@ -1,0 +1,181 @@
+:root {
+  color-scheme: light dark;
+  --ink: #1f2328;
+  --quiet: #59636e;
+  --line: #d1d9e0;
+  --surface: #ffffff;
+  --page: #f6f8fa;
+  --accent: #0969da;
+  --accent-ink: #ffffff;
+  --error: #cf222e;
+  font-family: system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6edf3;
+    --quiet: #9198a1;
+    --line: #3d444d;
+    --surface: #151b23;
+    --page: #0d1117;
+    --accent: #4493f8;
+    --accent-ink: #0d1117;
+    --error: #f85149;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.page {
+  max-width: 680px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.status,
+.empty,
+.author {
+  color: var(--quiet);
+}
+
+.status {
+  margin: 0;
+  font-size: 14px;
+}
+
+.messages {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty {
+  flex: 1;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.bubble.user {
+  align-self: flex-end;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.bubble.user .author {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.bubble .author {
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+.bubble .text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.bubble.streaming .text::after {
+  content: '|';
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.composer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+input {
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.author-input {
+  width: 120px;
+}
+
+.draft-input {
+  flex: 1;
+  min-width: 160px;
+}
+
+button {
+  font: inherit;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  cursor: pointer;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent);
+}
+
+button.link {
+  border: none;
+  background: none;
+  color: var(--accent);
+  padding: 0;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--error);
+}

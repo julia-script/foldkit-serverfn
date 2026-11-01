@@ -10,6 +10,7 @@ TanStack Start's `createServerFn` was the reference. The main differences come f
 
 - [`packages/serverfn`](packages/serverfn): the library, published as `foldkit-serverfn`.
 - [`examples/guestbook`](examples/guestbook): a server-rendered guestbook. It loads entries in process for the first render, signs entries through a server function with a typed validation error, streams new entries to every open tab, and streams a fortune word by word that you can stop halfway.
+- [`examples/chat`](examples/chat): a group chat with an AI assistant, built on `effect/ai`. Messages are submitted with a server function, and every open tab follows one conversation stream that carries new messages and the assistant's reply as it is generated. Anyone can stop a reply halfway. With `ANTHROPIC_API_KEY` set, replies come from Claude through `@effect/ai-anthropic` (`ANTHROPIC_MODEL` picks the model). Without a key, an offline model streams a canned reply, so the example runs with no account.
 
 ## Usage
 
@@ -177,6 +178,7 @@ pnpm build        # builds the library, which the example's Vite config imports
 pnpm test
 pnpm typecheck
 pnpm dev          # runs the guestbook example at http://localhost:5173
+pnpm dev:chat     # runs the chat example; set ANTHROPIC_API_KEY to use Claude
 ```
 
 To try the production build, run `pnpm --filter guestbook-example build`, then `pnpm --filter guestbook-example start`.

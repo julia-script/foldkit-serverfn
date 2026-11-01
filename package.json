@@ -10,6 +10,7 @@
     "build": "pnpm --filter foldkit-serverfn build",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
-    "dev": "pnpm build && pnpm --filter guestbook-example dev"
+    "dev": "pnpm build && pnpm --filter guestbook-example dev",
+    "dev:chat": "pnpm build && pnpm --filter chat-example dev"
   }
 }
