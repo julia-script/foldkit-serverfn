@@ -8,6 +8,43 @@ importers:
 
   .: {}
 
+  examples/chat:
+    dependencies:
+      '@effect/ai-anthropic':
+        specifier: 4.1.1
+        version: 4.1.1(effect@4.1.1)
+      '@effect/platform-browser':
+        specifier: 4.1.1
+        version: 4.1.1(effect@4.1.1)
+      '@effect/platform-node':
+        specifier: 4.1.1
+        version: 4.1.1(effect@4.1.1)(redis@6.3.1)
+      '@foldkit/node':
+        specifier: 0.2.0
+        version: 0.2.0(effect@4.1.1)(foldkit@0.170.0(@effect/platform-browser@4.1.1(effect@4.1.1))(effect@4.1.1))(redis@6.3.1)
+      effect:
+        specifier: 4.1.1
+        version: 4.1.1
+      foldkit:
+        specifier: 0.170.0
+        version: 0.170.0(@effect/platform-browser@4.1.1(effect@4.1.1))(effect@4.1.1)
+      foldkit-serverfn:
+        specifier: workspace:*
+        version: link:../../packages/serverfn
+    devDependencies:
+      '@foldkit/vite-plugin':
+        specifier: 0.29.0
+        version: 0.29.0(effect@4.1.1)(foldkit@0.170.0(@effect/platform-browser@4.1.1(effect@4.1.1))(effect@4.1.1))(redis@6.3.1)(vite@8.3.5(@types/node@22.20.5))
+      '@types/node':
+        specifier: ^22.18.0
+        version: 22.20.5
+      typescript:
+        specifier: ^7.0.2
+        version: 7.0.2
+      vite:
+        specifier: ^8.3.5
+        version: 8.3.5(@types/node@22.20.5)
+
   examples/guestbook:
     dependencies:
       '@effect/platform-browser':
@@ -64,6 +101,11 @@ importers:
         version: 5.0.5(@types/node@22.20.5)(vite@8.3.5(@types/node@22.20.5))
 
 packages:
+
+  '@effect/ai-anthropic@4.1.1':
+    resolution: {integrity: sha512-tBJ4JCeoiyxxVwgTwbU9BZ8/Mshg6LufdsHBF/N/uXIM+Uq0ogSaHSG+BomDEx2uBDCF8/FPhuHp2dQAgSoWqA==}
+    peerDependencies:
+      effect: ^4.1.1
 
   '@effect/platform-browser@4.1.1':
     resolution: {integrity: sha512-bfJuCUX0qPv0fqVWq65cLNWoSFHt2vPDMn0m2cpaxz51/gaCclT3yBAk3JxN/7aEBvcKVXMui9G8uz4a9uoDgA==}
@@ -685,6 +727,10 @@ packages:
         optional: true
 
 snapshots:
+
+  '@effect/ai-anthropic@4.1.1(effect@4.1.1)':
+    dependencies:
+      effect: 4.1.1
 
   '@effect/platform-browser@4.1.1(effect@4.1.1)':
     dependencies:
